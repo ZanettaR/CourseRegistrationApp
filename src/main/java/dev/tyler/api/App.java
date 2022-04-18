@@ -14,7 +14,7 @@ public class App {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("(1) Sign in \n(2) Register as new user");
+        System.out.println("1. Sign in \n2. Register as new user");
         try{
             int choice = scan.nextInt();
             User user;
@@ -68,8 +68,7 @@ public class App {
                         System.out.println("Course Description: ");
                         course.setDescription(scanner.next());
                         System.out.println("Course Capacity: ");
-                        String c = scanner.nextLine();
-                        course.setCapacity(Integer.parseInt(c));
+                        course.setCapacity(scanner.nextInt());
                         added = App.userService.addCourse(course);
                     }catch(Exception e){
                         added = false;
